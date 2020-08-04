@@ -7,6 +7,8 @@ import com.bumptech.glide.Glide
 import com.clean.project.app.R
 import com.clean.project.app.domain.models.Weather
 import com.clean.project.app.ui.commons.BaseFragment
+import com.clean.project.app.ui.commons.extensions.gone
+import com.clean.project.app.ui.commons.extensions.visible
 import kotlinx.android.synthetic.main.fragment_details.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -21,6 +23,16 @@ class DetailsFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
 
         initViewModelObservers()
+    }
+
+    override fun onStart() {
+        shimmerFrameLayout.startShimmer()
+        super.onStart()
+    }
+
+    override fun onPause() {
+        shimmerFrameLayout.stopShimmer()
+        super.onPause()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,6 +50,7 @@ class DetailsFragment : BaseFragment() {
     }
 
     private fun renderDetails(it: Weather) {
+        hideShimmer()
         Glide.with(this)
             .load(it.info.icon)
             .fitCenter()
@@ -55,6 +68,12 @@ class DetailsFragment : BaseFragment() {
         humidity.setValue(getString(R.string.humidity, it.main.humidity))
         sunrise.setValue(it.hours.sunrise)
         sunset.setValue(it.hours.sunset)
+    }
+
+    private fun hideShimmer() {
+        detailsContainer.visible()
+        shimmerFrameLayout.gone()
+        shimmerFrameLayout.stopShimmer()
     }
 
 }

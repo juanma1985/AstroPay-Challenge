@@ -8,4 +8,8 @@
     <dimen name="module_24">24dp</dimen>
     <dimen name="module_32">32dp</dimen>
     <dimen name="module_48">32dp</dimen>
+
+    <dimen name="icon_size">80dp</dimen>
+    <dimen name="placeholder_icon_size">60dp</dimen>
+
 </resources>

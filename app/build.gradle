@@ -80,4 +80,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.google.code.gson:gson:$gson_version"
 
+    // placeholder
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
 }

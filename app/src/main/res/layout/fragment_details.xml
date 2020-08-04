@@ -6,119 +6,139 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:layout_constraintBottom_toTopOf="@id/city_name"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/city_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@id/title"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image"
-            tools:text="Montevideo" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/module_8"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/city_name"
-            tools:text="Cloudy" />
-
-        <TextView
-            android:id="@+id/temp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/module_8"
-            android:textSize="36sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title"
-            tools:text="17°" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/temp_container"
+            android:id="@+id/detailsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/module_8"
-            app:layout_constraintTop_toBottomOf="@id/temp">
+            android:visibility="gone">
 
-            <com.clean.project.app.ui.home.CustomTempItemView
-                android:id="@+id/temp_min"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                app:layout_constraintBottom_toTopOf="@id/city_name"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/temp_max"
-                app:layout_constraintTop_toTopOf="parent"
-                app:temp_title="@string/min" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <com.clean.project.app.ui.home.CustomTempItemView
-                android:id="@+id/temp_max"
+            <TextView
+                android:id="@+id/city_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toRightOf="@id/temp_min"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@id/title"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:temp_title="@string/max" />
+                app:layout_constraintTop_toBottomOf="@id/image"
+                tools:text="Montevideo" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/module_8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/city_name"
+                tools:text="Cloudy" />
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/module_8"
+                android:textSize="36sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="17°" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/temp_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/module_8"
+                app:layout_constraintTop_toBottomOf="@id/temp">
+
+                <com.clean.project.app.ui.home.CustomTempItemView
+                    android:id="@+id/temp_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/temp_max"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:temp_title="@string/min" />
+
+                <com.clean.project.app.ui.home.CustomTempItemView
+                    android:id="@+id/temp_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toRightOf="@id/temp_min"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:temp_title="@string/max" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/module_16"
+                android:layout_marginRight="@dimen/module_16"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/temp_container">
+
+                <com.clean.project.app.ui.home.CustomWeatherItemView
+                    android:id="@+id/wind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/module_16"
+                    app:title="@string/wind" />
+
+                <com.clean.project.app.ui.home.CustomWeatherItemView
+                    android:id="@+id/humidity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/module_16"
+                    app:title="@string/humidity_title" />
+
+                <com.clean.project.app.ui.home.CustomWeatherItemView
+                    android:id="@+id/sunrise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/module_16"
+                    app:title="@string/sunrise" />
+
+                <com.clean.project.app.ui.home.CustomWeatherItemView
+                    android:id="@+id/sunset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/module_16"
+                    app:title="@string/sunset" />
+
+            </LinearLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/module_16"
-            android:layout_marginRight="@dimen/module_16"
+            android:layout_gravity="center"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/temp_container">
+            tools:visibility="gone">
 
-            <com.clean.project.app.ui.home.CustomWeatherItemView
-                android:id="@+id/wind"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/module_16"
-                app:title="@string/wind" />
+            <include layout="@layout/placeholder_details" />
 
-            <com.clean.project.app.ui.home.CustomWeatherItemView
-                android:id="@+id/humidity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/module_16"
-                app:title="@string/humidity_title" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
-            <com.clean.project.app.ui.home.CustomWeatherItemView
-                android:id="@+id/sunrise"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/module_16"
-                app:title="@string/sunrise" />
-
-            <com.clean.project.app.ui.home.CustomWeatherItemView
-                android:id="@+id/sunset"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/module_16"
-                app:title="@string/sunset" />
-
-        </LinearLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </ScrollView>

@@ -10,6 +10,7 @@ import com.clean.project.app.domain.actions.LoadCities
 import com.clean.project.app.domain.models.City
 import com.clean.project.app.ui.commons.EventData
 import kotlinx.coroutines.launch
+import java.util.*
 
 class HomeViewModel(
     private val loadCitiesAction: LoadCities,
@@ -28,7 +29,7 @@ class HomeViewModel(
     private fun loadCities() {
         viewModelScope.launch {
             try {
-                _citiesData.value = loadCitiesAction()
+                _citiesData.value = loadCitiesAction(Locale.getDefault().language)
             } catch (e: Exception) {
                 Log.v("ERROR", e.toString())
             }

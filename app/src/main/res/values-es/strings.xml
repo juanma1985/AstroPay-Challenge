@@ -3,5 +3,6 @@
     <string name="sunrise">amanecer</string>
     <string name="sunset">atardecer</string>
     <string name="current_location">Ubicación actual</string>
-    <string name="permissons">Necesitamos permisos para mostrar el clima.</string>
+    <string name="permissions">Necesitamos permisos para mostrar el clima.</string>
+    <string name="humidity_title">humedad</string>
 </resources>

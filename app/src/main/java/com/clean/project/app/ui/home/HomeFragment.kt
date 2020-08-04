@@ -79,7 +79,7 @@ class HomeFragment : BaseFragment() {
             ) {
                 Snackbar.make(
                     requireView(),
-                    getString(R.string.permissons),
+                    getString(R.string.permissions),
                     Snackbar.LENGTH_LONG
                 )
                     .setAction("Ok, allow") {

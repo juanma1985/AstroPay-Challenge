@@ -2,6 +2,7 @@
     <string name="app_name" translatable="false">Weather App</string>
     <string name="degrees" translatable="false">%1$d°</string>
     <string name="speed" translatable="false">%1$s m/s</string>
+    <string name="humidity" translatable="false">%1$d %%</string>
     <string name="max" translatable="false">max</string>
     <string name="min" translatable="false">min</string>
 
@@ -9,5 +10,6 @@
     <string name="sunrise">sunrise</string>
     <string name="sunset">sunset</string>
     <string name="current_location">Current location</string>
-    <string name="permissons">We need permissions to show the weather</string>
+    <string name="permissions">We need permissions to show the weather</string>
+    <string name="humidity_title">humidity</string>
 </resources>

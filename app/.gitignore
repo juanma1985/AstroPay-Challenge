@@ -1,1 +1,9 @@
+*.iml
+.DS_Store
+/.idea
+.idea
+.gradle
+/fastlane/report.xml
+/app/app.iml
 /build
+/build/intermediates/lint-cache/

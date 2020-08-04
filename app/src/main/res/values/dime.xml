@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="module_2">2dp</dimen>
+    <dimen name="module_4">4dp</dimen>
+    <dimen name="module_6">6dp</dimen>
+    <dimen name="module_8">8dp</dimen>
+    <dimen name="module_16">16dp</dimen>
+    <dimen name="module_24">24dp</dimen>
+    <dimen name="module_32">32dp</dimen>
+    <dimen name="module_48">32dp</dimen>
+</resources>

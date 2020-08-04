@@ -5,4 +5,5 @@
     <string name="current_location">Ubicación actual</string>
     <string name="permissions">Necesitamos permisos para mostrar el clima.</string>
     <string name="humidity_title">humedad</string>
+    <string name="accept">Acceptar</string>
 </resources>

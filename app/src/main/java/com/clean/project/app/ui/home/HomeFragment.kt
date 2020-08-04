@@ -4,10 +4,12 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.clean.project.app.R
 import com.clean.project.app.domain.models.City
@@ -16,6 +18,7 @@ import com.clean.project.app.ui.home.adapter.CitiesAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class HomeFragment : BaseFragment() {
 
@@ -40,6 +43,7 @@ class HomeFragment : BaseFragment() {
             citiesAdapter = CitiesAdapter { city -> onCitySelected(city) }
             layoutManager = viewManager
             adapter = citiesAdapter
+            addItemDecoration(DividerItemDecoration(requireContext(), LinearLayout.VERTICAL))
         }
     }
 
@@ -82,12 +86,11 @@ class HomeFragment : BaseFragment() {
                     getString(R.string.permissions),
                     Snackbar.LENGTH_LONG
                 )
-                    .setAction("Ok, allow") {
+                    .setAction(getString(R.string.accept)) {
                         requestLocationPermission()
                     }
                     .show()
             } else {
-                // No explanation needed, we can request the permission.
                 requestLocationPermission()
             }
         } else {

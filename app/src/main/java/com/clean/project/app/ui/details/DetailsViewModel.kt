@@ -23,11 +23,16 @@ class DetailsViewModel(
 
     val weatherData: LiveData<Weather> = _weatherData
 
+    private var cityId: Int? = null
+
     fun loadWeather(cityId: Int) {
-        if (cityId == CURRENT_LOCATION) {
-            getByLocation()
-        } else {
-            getById(cityId)
+        if (this.cityId != cityId) {
+            this.cityId = cityId
+            if (cityId == CURRENT_LOCATION) {
+                getByLocation()
+            } else {
+                getById(cityId)
+            }
         }
     }
 

@@ -30,7 +30,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val viewModelModules = module {
-    viewModel { HomeViewModel(get(), get()) }
+    viewModel { HomeViewModel(get()) }
     viewModel { DetailsViewModel(get(), get(), get()) }
 }
 

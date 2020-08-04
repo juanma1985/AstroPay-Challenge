@@ -13,8 +13,7 @@ import kotlinx.coroutines.launch
 import java.util.*
 
 class HomeViewModel(
-    private val loadCitiesAction: LoadCities,
-    private val getCurrentLocation: GetCurrentLocation
+    private val loadCitiesAction: LoadCities
 ) : ViewModel() {
     private val _citiesData = MutableLiveData<List<City>>()
     private val _openDetails = MutableLiveData<EventData<Int>>()

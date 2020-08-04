@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name" translatable="false">Weather App</string>
+    <string name="app_name" translatable="false">The\n Weather\n App</string>
+    <string name="app_name_inline" translatable="false">The Weather App</string>
     <string name="degrees" translatable="false">%1$d°</string>
     <string name="speed" translatable="false">%1$s m/s</string>
     <string name="humidity" translatable="false">%1$d %%</string>
@@ -12,4 +13,5 @@
     <string name="current_location">Current location</string>
     <string name="permissions">We need permissions to show the weather</string>
     <string name="humidity_title">humidity</string>
+    <string name="accept">Accept</string>
 </resources>

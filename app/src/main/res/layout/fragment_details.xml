@@ -59,69 +59,24 @@
             android:layout_marginTop="@dimen/module_8"
             app:layout_constraintTop_toBottomOf="@id/temp">
 
-            <LinearLayout
-                android:id="@+id/temp_min_container"
+            <com.clean.project.app.ui.home.CustomTempItemView
+                android:id="@+id/temp_min"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/temp_max_container"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintRight_toLeftOf="@id/temp_max"
+                app:layout_constraintTop_toTopOf="parent"
+                app:temp_title="@string/min" />
 
-                <TextView
-                    android:id="@+id/temp_min"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    tools:text="7°" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/min"
-                    android:textAllCaps="true"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/city_name" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/temp_max_container"
+            <com.clean.project.app.ui.home.CustomTempItemView
+                android:id="@+id/temp_max"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
-                app:layout_constraintLeft_toRightOf="@id/temp_min_container"
+                app:layout_constraintLeft_toRightOf="@id/temp_min"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:temp_title="@string/max" />
 
-                <TextView
-                    android:id="@+id/temp_max"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    tools:text="27°" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/max"
-                    android:textAllCaps="true"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/city_name" />
-
-
-            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

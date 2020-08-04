@@ -6,4 +6,9 @@
         <attr name="value" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="CustomTempItemView">
+        <attr name="temp_title" format="string" />
+        <attr name="temp_value" format="string" />
+    </declare-styleable>
+
 </resources>

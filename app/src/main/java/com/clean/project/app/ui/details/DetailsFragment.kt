@@ -48,8 +48,8 @@ class DetailsFragment : BaseFragment() {
 
 
         temp.text = getString(R.string.degrees, it.main.temp)
-        temp_min.text = getString(R.string.degrees, it.main.tempMin)
-        temp_max.text = getString(R.string.degrees, it.main.tempMax)
+        temp_min.setValue(getString(R.string.degrees, it.main.tempMin))
+        temp_max.setValue(getString(R.string.degrees, it.main.tempMax))
 
         wind.setValue(getString(R.string.speed, it.info.windSpeed.toString()))
         humidity.setValue(getString(R.string.humidity, it.main.humidity))

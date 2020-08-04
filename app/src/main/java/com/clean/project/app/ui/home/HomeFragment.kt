@@ -24,7 +24,6 @@ class HomeFragment : BaseFragment() {
 
     private val viewModel: HomeViewModel by viewModel()
 
-    private lateinit var selectedCity: City
     private lateinit var citiesAdapter: CitiesAdapter
 
     override val layoutId: Int
@@ -48,9 +47,9 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun onCitySelected(city: City) {
-        selectedCity = city
+        viewModel.setCity(city)
         if (city.id != CURRENT_LOCATION) {
-            viewModel.cityClicked(selectedCity)
+            viewModel.cityClicked()
         } else {
             checkOpenPermission()
         }
@@ -94,7 +93,7 @@ class HomeFragment : BaseFragment() {
                 requestLocationPermission()
             }
         } else {
-            viewModel.cityClicked(selectedCity)
+            viewModel.cityClicked()
         }
     }
 
@@ -112,15 +111,10 @@ class HomeFragment : BaseFragment() {
     ) {
         when (requestCode) {
             MY_PERMISSIONS_REQUEST_LOCATION -> {
-                // If request is cancelled, the result arrays are empty.
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    // permission was granted, yay! Do the task you need to do.
-                    viewModel.cityClicked(selectedCity)
+                    viewModel.cityClicked()
                 }
                 return
-            }
-            else -> {
-                // Ignore all other requests.
             }
         }
     }

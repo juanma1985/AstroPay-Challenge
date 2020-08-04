@@ -21,6 +21,8 @@ class HomeViewModel(
     val citiesData: LiveData<List<City>> = _citiesData
     val openDetails: LiveData<EventData<Int>> = _openDetails
 
+    private var city: City? = null
+
     init {
         loadCities()
     }
@@ -35,8 +37,14 @@ class HomeViewModel(
         }
     }
 
-    fun cityClicked(city: City) {
-        _openDetails.value = EventData(city.id)
+    fun cityClicked() {
+        city?.run {
+            _openDetails.value = EventData(id)
+        }
+    }
+
+    fun setCity(city: City) {
+        this.city = city
     }
 
 }

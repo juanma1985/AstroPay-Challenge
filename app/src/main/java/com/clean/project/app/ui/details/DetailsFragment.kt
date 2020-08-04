@@ -46,14 +46,15 @@ class DetailsFragment : BaseFragment() {
         city_name.text = it.city.name
         title.text = it.info.description
 
+
         temp.text = getString(R.string.degrees, it.main.temp)
         temp_min.text = getString(R.string.degrees, it.main.tempMin)
         temp_max.text = getString(R.string.degrees, it.main.tempMax)
 
-        wind_speed.text = getString(R.string.speed, it.info.windSpeed.toString())
-        humidity.text = getString(R.string.humidity, it.main.humidity)
-        sunrise_time.text = it.hours.sunrise
-        sunset_time.text = it.hours.sunset
+        wind.setValue(getString(R.string.speed, it.info.windSpeed.toString()))
+        humidity.setValue(getString(R.string.humidity, it.main.humidity))
+        sunrise.setValue(it.hours.sunrise)
+        sunset.setValue(it.hours.sunset)
     }
 
 }

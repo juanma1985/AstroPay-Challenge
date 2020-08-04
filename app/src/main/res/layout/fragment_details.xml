@@ -133,125 +133,33 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/temp_container">
 
-            <LinearLayout
+            <com.clean.project.app.ui.home.CustomWeatherItemView
+                android:id="@+id/wind"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/module_16"
-                android:orientation="vertical">
+                app:title="@string/wind" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/wind"
-                    android:textAllCaps="true"
-                    android:textSize="18sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/city_name" />
-
-                <TextView
-                    android:id="@+id/wind_speed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    tools:text="3 mi/h"
-                    android:textSize="30sp"
-                    app:layout_constraintBottom_toTopOf="@id/title"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <com.clean.project.app.ui.home.CustomWeatherItemView
+                android:id="@+id/humidity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/module_16"
-                android:orientation="vertical">
+                app:title="@string/humidity_title" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/humidity_title"
-                    android:textAllCaps="true"
-                    android:textSize="18sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/city_name" />
-
-                <TextView
-                    android:id="@+id/humidity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    tools:text="80%"
-                    android:textSize="30sp"
-                    app:layout_constraintBottom_toTopOf="@id/title"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <com.clean.project.app.ui.home.CustomWeatherItemView
+                android:id="@+id/sunrise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/module_16"
-                android:orientation="vertical">
+                app:title="@string/sunrise" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sunrise"
-                    android:textAllCaps="true"
-                    android:textSize="18sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/city_name" />
-
-                <TextView
-                    android:id="@+id/sunrise_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:textSize="30sp"
-                    app:layout_constraintBottom_toTopOf="@id/title"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image"
-                    tools:text="20:42" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <com.clean.project.app.ui.home.CustomWeatherItemView
+                android:id="@+id/sunset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/module_16"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sunset"
-                    android:textAllCaps="true"
-                    android:textSize="18sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/city_name" />
-
-                <TextView
-                    android:id="@+id/sunset_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:textSize="30sp"
-                    app:layout_constraintBottom_toTopOf="@id/title"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image"
-                    tools:text="20:42" />
-
-            </LinearLayout>
+                app:title="@string/sunset" />
 
         </LinearLayout>
 
